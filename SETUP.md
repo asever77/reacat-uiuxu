@@ -850,9 +850,7 @@ app/about/
 ```json
 {
   "compilerOptions": {
-    //...
     "baseUrl": ".",
-    // ✅ 추가 엄격한 설정들
     "noUncheckedIndexedAccess": true, // 배열/객체 접근 시 undefined 체크 강제
     "noImplicitReturns": true, // 모든 코드 경로에서 return 강제
     "noFallthroughCasesInSwitch": true, // switch문 fallthrough 방지
@@ -869,7 +867,6 @@ app/about/
     "@/types/*": ["src/types/*"], // ✅ 타입 정의용
     "@/utils/*": ["src/utils/*"] // ✅ 유틸리티용
   }
-  //...
 }
 ```
 
@@ -886,9 +883,15 @@ app/about/
 
 ## 14. 디렉토리 구조
 
-app router에서는 layout.tsx는 상속이 되는 구조
-
+app router에서는 layout.tsx는 상속이 되는 구조   
 ```
+📂.storybook
+│  ├──📄main.ts
+│  ├──📄preview.ts
+│  └──📄vitest.setup.ts
+📂public
+│  ├──📂images
+│  └──📄mockServiceWorker.js
 📂src
 ├──📂app
 │  ├──📂(error)
@@ -927,6 +930,18 @@ app router에서는 layout.tsx는 상속이 되는 구조
 │  └──📄layout.tsx  # Root Layout
 │
 ├──📂components  # 공통 컴포넌트
+│  ├──📂contents
+│  │  └──📄PageContent.tsx  # 컨텐츠 컴포넌트
+│  ├──📂icons
+│  │  ├──📄CommonIcons.tsx  # SVG 아이콘 컴포넌트
+│  │  └──📄index.ts  # 배럴 파일
+│  ├──📂layout
+│  │  ├──📄Footer.tsx
+│  │  └──📄Header.tsx
+│  ├──📂ui  # shadcn 설치된 파일 최종 사용 안함
+│  └──📂uiux  # shadcn 수정한 파일로 최종 사용 할 컴포넌트
 ├──📂mocks  # mock 데이터
+│  ├──📄userHandlers.ts
+│  └──📄index.ts  # 배럴 파일
 └──📂stories  # stroybook 페이지
 ```

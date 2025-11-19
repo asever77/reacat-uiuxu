@@ -1,5 +1,5 @@
 import { initialize, mswLoader } from "msw-storybook-addon";
-import { handlers } from "../src/mocks/handlers";
+import { handlers } from "../src/mocks";
 import type { Preview } from "@storybook/nextjs-vite";
 import "../src/app/globals.css";
 

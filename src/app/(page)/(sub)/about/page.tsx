@@ -5,7 +5,6 @@ import {
   Img,
   ChatBubble,
 } from "@/components/contents/PageContent";
-import { Button } from "@/components/uiux/button";
 
 import StepComponent from "./_components/Step";
 import {

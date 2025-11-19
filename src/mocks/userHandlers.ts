@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 
-export const handlers = [
+export const userHandlers = [
   // 개별 포스트 API
   http.get("/api/posts/:id", ({ params }) => {
     const postId = parseInt(params.id as string);
