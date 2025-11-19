@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/uiux/button";
+import { Button } from "@/components/uiux";
 
 export default function NotFound() {
   return (

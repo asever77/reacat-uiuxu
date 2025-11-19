@@ -10,7 +10,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/uiux/alert-dialog";
+} from "@/components/uiux";
 
 interface SystemDialogProps {
   title: string;

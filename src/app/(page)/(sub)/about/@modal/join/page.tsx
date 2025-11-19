@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/uiux/button";
 import {
   Dialog,
   DialogContent,
@@ -9,7 +8,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/uiux/dialog";
+  Button,
+} from "@/components/uiux";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 

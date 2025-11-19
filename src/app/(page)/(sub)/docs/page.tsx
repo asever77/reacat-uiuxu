@@ -4,8 +4,8 @@ import {
   FixedArea,
   Img,
   ChatBubble,
-} from "@/components/contents/PageContent";
-import { Button } from "@/components/uiux/button";
+} from "@/components/contents";
+import { Button } from "@/components/uiux";
 
 export default function AboutPage() {
   return (

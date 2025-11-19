@@ -4,7 +4,7 @@ import {
   FixedArea,
   Img,
   ChatBubble,
-} from "@/components/contents/PageContent";
+} from "@/components/contents";
 
 import StepComponent from "./_components/Step";
 import {

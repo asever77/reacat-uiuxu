@@ -3,8 +3,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/uiux/accordion";
-import { Typo } from "@/components/contents/PageContent";
+} from "@/components/uiux";
+import { Typo } from "@/components/contents";
 
 const StepComponent = () => {
   return (

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { ButtonArea } from "@/components/contents/PageContent";
-import { Button } from "@/components/uiux/button";
+import { ButtonArea } from "@/components/contents";
+import { Button } from "@/components/uiux";
 import { SystemDialog } from "@/providers/SystemDialog";
 
 export function BottomFixedButton() {
