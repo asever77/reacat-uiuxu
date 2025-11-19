@@ -1,0 +1,194 @@
+/* IconShowcase.css */
+.icon-showcase {
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.showcase-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.showcase-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.showcase-header p {
+  margin: 0 0 1rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.icon-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.icon-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  background: #f8f9fa;
+}
+
+.icon-info {
+  text-align: center;
+  width: 100%;
+}
+
+.icon-name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+  word-break: break-word;
+}
+
+.icon-variant {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+}
+
+.copied-indicator {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #10b981;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  20%, 80% { opacity: 1; transform: scale(1); }
+}
+
+.color-variants-showcase .color-section {
+  margin-bottom: 3rem;
+}
+
+.color-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.usage-guide {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.usage-guide h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.code-example {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  overflow-x: auto;
+  border: 1px solid #e5e5e5;
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .icon-showcase {
+    background: #1a1a1a;
+    color: #e5e5e5;
+  }
+  
+  .showcase-header h2,
+  .color-title,
+  .usage-guide h3,
+  .icon-name {
+    color: #e5e5e5;
+  }
+  
+  .showcase-header p,
+  .icon-stats,
+  .icon-variant {
+    color: #a3a3a3;
+  }
+  
+  .icon-card {
+    background: #2a2a2a;
+    border-color: #404040;
+  }
+  
+  .icon-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  }
+  
+  .icon-container {
+    background: #404040;
+  }
+  
+  .code-example {
+    background: #2a2a2a;
+    border-color: #404040;
+    color: #e5e5e5;
+  }
+  
+  .color-title {
+    border-bottom-color: #404040;
+  }
+  
+  .usage-guide {
+    border-top-color: #404040;
+  }
+}
