@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import StoreProvider from "@/providers/StoreProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "@/app/globals.css";
@@ -26,6 +27,7 @@ const geistMono = Geist_Mono({
 
 // app/layout.tsx - 모든 메타데이터 포함 예시
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   // 기본 정보
   title: {
     default: "홈페이지 - 최고의 웹사이트",
@@ -121,8 +123,9 @@ const RootLayout = ({
     <html lang="ko">
       <body
         className={`${pretendard.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

@@ -7,6 +7,10 @@ import {
 } from "@/components/contents";
 
 import StepComponent from "./_components/Step";
+import TestForm from "./_components/TestForm";
+import Counter from "./_components/Counter";
+import PolicyList from "./_components/PolicyList";
+import PolicyForm from "./_components/PolicyForm";
 import {
   BottomFixedButton,
   StepModalButton,
@@ -33,19 +37,26 @@ export default function AboutPage() {
           </ChatBubble>
         </div>
       </StickyArea>
-      <div className="p-5">
+      <div className="p-5 flex flex-col gap-6">
         <Typo tag="p" style="body-m">
           이 페이지는 뒤로가기 버튼이 있고 우측에 편집 버튼이 있습니다.
         </Typo>
 
+        <Counter />
+
         <StepModalButton />
+
+        <PolicyForm />
+
+        <PolicyList />
+
+        <TestForm />
 
         {/* 회원가입 로직 */}
         <StepComponent />
       </div>
 
       <FixedArea style="base" bottom={0}>
-        {/* Client Component로 분리 */}
         <BottomFixedButton />
       </FixedArea>
     </main>

@@ -4,14 +4,20 @@ import { cn } from "@/lib/utils";
 // ButtonArea 컴포넌트
 interface ButtonAreaProps {
   children?: ReactNode;
+  direction?: "row" | "column";
   className?: string;
 }
 
-export const ButtonArea = ({ children, className }: ButtonAreaProps) => {
+export const ButtonArea = ({
+  children,
+  direction = "row",
+  className,
+}: ButtonAreaProps) => {
   return (
     <div
       className={cn(
-        "flex w-full justify-center gap-2 [&>_button]:flex-1",
+        "flex w-full gap-2 *:flex-1",
+        direction === "column" ? "flex-col" : "flex-row",
         className
       )}
     >

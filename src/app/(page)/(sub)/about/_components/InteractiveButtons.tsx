@@ -28,8 +28,10 @@ export function BottomFixedButton() {
 
   return (
     <ButtonArea>
-      <Button variant="outline">이전</Button>
-      <Button variant="destructive" onClick={handleNextClick}>
+      <Button type="button" variant="outline">
+        이전
+      </Button>
+      <Button type="button" variant="destructive" onClick={handleNextClick}>
         다음
       </Button>
 
@@ -55,7 +57,12 @@ export function StepModalButton() {
   };
 
   return (
-    <Button variant="outline" className="mt-4" onClick={handleJoinModalClick}>
+    <Button
+      type="button"
+      variant="outline"
+      className="mt-4"
+      onClick={handleJoinModalClick}
+    >
       Join 모달 열기
     </Button>
   );

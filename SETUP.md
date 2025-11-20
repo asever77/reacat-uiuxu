@@ -739,7 +739,7 @@ Next.js 권장 방식
 - 성능 최적화 (폰트 로딩 최적화)
 - 유연성 (조건부 폰트 적용 가능)
 
-## 9.1. src/app/layout.tsx
+### 9.1. src/app/layout.tsx
 
 ```tsx
 import localFont from "next/font/local";
@@ -758,7 +758,7 @@ const pretendard = localFont({
 <body className={`${pretendard.variable} antialiased`}>
 ```
 
-## 9.2. src/app/globals.css
+### 9.2. src/app/globals.css
 
 ````css
 @layer base {
@@ -769,7 +769,40 @@ const pretendard = localFont({
 
 ````
 
-## 10. App Router
+## 10. Redux Toolkit (RTK) 설치 및 설정
+
+```bash
+pnpm add @reduxjs/toolkit react-redux
+pnpm add -D @types/react-redux
+```
+
+## 10.1. src/providers/StoreProvider.tsx
+
+```tsx
+"use client";
+
+import { Provider } from "react-redux";
+import { store } from "@/stores";
+
+interface StoreProviderProps {
+  children: React.ReactNode;
+}
+
+export function StoreProvider({ children }: StoreProviderProps) {
+  return <Provider store={store}>{children}</Provider>;
+}
+```
+
+### 10.2. src/app/layout.tsx
+
+```tsx
+import { Providers } from "@/providers/Providers";
+<body>
+  <Providers>{children}</Providers>
+</body>;
+```
+
+## 11. App Router
 
 - Route Groups (() 괄호 사용) - 폴더명 무시
   - 라우팅 시스템에 포함되지만 URL 경로에서 제외
@@ -801,9 +834,9 @@ deep link 지원
 
 두 표기법은 **"가로채기가 실패했을 때 이동할 최종 경로"**를 지정해 줍니다.
 
-## 11. "use client" 사용
+## 12. "use client" 사용
 
-### 필요한 경우
+### 12.1. 필요한 경우
 
 1. 상태 관리 (useState, useReducer)
 2. 이벤트 핸들러 (onClick, onChange 등)
@@ -811,13 +844,13 @@ deep link 지원
 4. useEffect, useLayoutEffect
 5. 외부 라이브러리 (브라우저 전용)
 
-### 불필요한 경우
+### 12.2. 불필요한 경우
 
 1. 정적 콘텐츠만 렌더링
 2. 서버 데이터 페칭 (async/await)
 3. 단순 prop 전달
 
-### 서버 컴포넌트 장점
+### 12.3. 서버 컴포넌트 장점
 
 - 빠른 초기 로드 - 서버에서 미리 렌더링
 - SEO 친화적 - 검색엔진이 콘텐츠를 바로 읽을 수 있음
@@ -845,7 +878,7 @@ app/about/
 
 ```
 
-## 12. tsconfig.json 타입스크립트 관련 설정
+## 13. tsconfig.json 타입스크립트 관련 설정
 
 ```json
 {
@@ -870,7 +903,7 @@ app/about/
 }
 ```
 
-## 13. 모달의 구조와 위치
+## 14. 모달의 구조와 위치
 
 - URL 연동 필요 > @modal (Parallel Routes) : URL 상태 관리, 뒤로가기 지원
   - full 페이지 모달
@@ -881,7 +914,7 @@ app/about/
 - 복잡 + 여러 페이지 > components/modals/ : 재사용성
   - 여러 페이지에서 사용하는 모달
 
-## 14. 디렉토리 구조
+## 15. 디렉토리 구조
 
 app router에서는 layout.tsx는 상속이 되는 구조
 
