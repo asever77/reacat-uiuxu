@@ -34,13 +34,11 @@ interface Policy {
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "보험명은 필수입니다." }),
-  premium: z.coerce
-    .number()
-    .min(0, { message: "보험료는 0 이상이어야 합니다." }),
-  coverage: z.coerce
-    .number()
-    .min(0, { message: "보장금액은 0 이상이어야 합니다." }),
+  premium: z.number().min(0, { message: "보험료는 0 이상이어야 합니다." }),
+  coverage: z.number().min(0, { message: "보장금액은 0 이상이어야 합니다." }),
 });
+
+type FormValues = z.infer<typeof formSchema>;
 
 export default function PolicyForm() {
   const dispatch = useAppDispatch();
@@ -48,7 +46,7 @@ export default function PolicyForm() {
     (state) => state.insurance
   );
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -57,7 +55,7 @@ export default function PolicyForm() {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: FormValues) => {
     try {
       dispatch(setLoading(true));
       dispatch(clearError());
@@ -137,6 +135,7 @@ export default function PolicyForm() {
                     type="number"
                     placeholder="월 보험료를 입력하세요"
                     {...field}
+                    onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
                 <FormMessage />
@@ -154,6 +153,7 @@ export default function PolicyForm() {
                     type="number"
                     placeholder="보장금액을 입력하세요"
                     {...field}
+                    onChange={(e) => field.onChange(Number(e.target.value))}
                   />
                 </FormControl>
                 <FormMessage />
