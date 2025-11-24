@@ -1,0 +1,9 @@
+{
+  "cloudcode.ai.index.excludePatterns": [
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/*.lock" 
+  ]
+}

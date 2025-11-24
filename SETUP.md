@@ -755,7 +755,19 @@ const pretendard = localFont({
   display: "swap",
 });
 
-<body className={`${pretendard.variable} antialiased`}>
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="ko" suppressHydrationWarning>
+      <body className={`${pretendard.variable} antialiased`}>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
+    </html>
+  );
+}
 ```
 
 ### 9.2. src/app/globals.css
@@ -986,4 +998,10 @@ app router에서는 layout.tsx는 상속이 되는 구조
 │  └──📄index.ts  # 배럴 파일
 │
 └──📂stories  # stroybook 페이지
+```
+
+## Framer Motion을 사용한 Fade-In 애니메이션
+
+```bash
+pnpm add framer-motion
 ```

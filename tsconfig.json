@@ -14,10 +14,10 @@
     "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": ".",
-    "noUncheckedIndexedAccess": true, 
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true, 
-    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,     // 배열 접근 시 undefined 체크
+    "noImplicitReturns": true,            // 모든 경로에서 return 강제
+    "noFallthroughCasesInSwitch": true,   // switch 문에서 case 누락 방지
+    "exactOptionalPropertyTypes": true,   // 선택적 속성 정확한 타입 체크
     "plugins": [
       {
         "name": "next"

@@ -15,7 +15,7 @@ const preview: Preview = {
       },
     },
     msw: {
-      handlers: handlers,
+      handlers: handlers, // 모든 스토리에서 API 모킹
     },
     a11y: {
       // 'todo' - show a11y violations in the test UI only

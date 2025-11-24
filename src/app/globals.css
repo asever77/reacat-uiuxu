@@ -49,6 +49,10 @@ html {
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   
+  /* Design System Base Unit (0.4rem = 4px at 10px font-size) */
+  --base-unit: 0.4rem;
+
+  /* Legacy variables for backward compatibility */
   --spacing: 0.4rem; 
   --radius: 0.4rem; 
 }
@@ -129,4 +133,20 @@ html {
     font-family: var(--font-pretendard), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     @apply bg-background text-foreground;
   }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-wrapper {
+  animation: fadeIn 0.5s ease-out forwards;
 }

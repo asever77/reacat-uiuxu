@@ -147,7 +147,7 @@ const Header = ({
   const finalType = type ?? config.type;
 
   return (
-    <header className="w-full sticky flex items-center justify-center top-0 left-0 min-h-[5.6rem] bg-white border-b border-gray-100">
+    <header className="w-full sticky flex items-center justify-center top-0 left-0 min-h-[5.6rem] bg-white border-b border-gray-100 z-1">
       <div className="flex items-center justify-between w-full h-full px-5 py-1">
         {finalShowBackButton ? (
           <button

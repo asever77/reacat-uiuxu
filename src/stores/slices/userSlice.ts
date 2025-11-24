@@ -46,10 +46,11 @@ interface UserState {
   error: string | null;
 }
 
+// 현재 userSlice.ts의 상태
 const initialState: UserState = {
-  entity: null,
-  loading: "idle",
-  error: null,
+  entity: null, // 🧠 메모리에 저장
+  loading: "idle", // 🧠 메모리에 저장
+  error: null, // 🧠 메모리에 저장
 };
 
 export const userSlice = createSlice({

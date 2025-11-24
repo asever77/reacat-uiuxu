@@ -24,6 +24,7 @@ Redux Toolkit의 데이터 흐름을 시각적으로 이해하면 훨씬 쉽습�
 ```bash
 pnpm add @reduxjs/toolkit react-redux
 pnpm add -D @types/react-redux
+pnpm install redux-persist
 ```
 
 ## Redux 디렉토리 구조
@@ -207,10 +208,12 @@ export type AppDispatch = AppStore["dispatch"];
 
 ```ts
 import { useDispatch, useSelector, useStore } from "react-redux";
-import type { RootState, AppDispatch, AppStore } from "./index";
+import type { RootState, AppDispatch, AppStore } from "@/stores/";
 
 // 1. **가장 최신 권장 방식 (타입 안전한 버전):**
 // 'useStore', 'useDispatch', 'useSelector'에 한 번에 타입을 바인딩합니다.
+// 이 방식을 사용하면 아래의 개별 함수 정의가 필요 없습니다.
+
 // 훅에 타입을 바인딩하여 타입 안전한 버전의 훅을 생성합니다.
 export const useAppSelector = useSelector.withTypes<RootState>();
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
@@ -252,3 +255,34 @@ import { Providers } from "@/providers/Providers";
   <Providers>{children}</Providers>
 </body>;
 ```
+
+## 저장 방식별 특징 비교
+
+- **Redux 메모리**
+  - 저장위치: 브라우저 RAM
+  - 지속성:❌ 새로고침시 소실
+  - 용량제한:🟡 메모리 한계
+  - 보안성: ✅ 높음
+  - 기기간 동기화: ❌ 불가능
+  - 사용사례: 임시 UI 상태
+- **Redux Persist (localStorage)**
+  - 저장위치: 브라우저 디스크
+  - 지속성:✅ 브라우저 종료해도 유지
+  - 용량제한:🟡 ~10MB
+  - 보안성:🟡 보통 (클라이언트)
+  - 기기간 동기화: ❌ 불가능
+  - 사용사례: 사용자 설정, 장바구니, 테마
+- **Redux Persist (sessionStorage)**
+  - 저장위치: 브라우저 메모리
+  - 지속성:🟡 탭 닫으면 소실
+  - 용량제한:🟡 ~10MB
+  - 보안성:🟡 보통 (클라이언트)
+  - 기기간 동기화: ❌ 불가능
+  - 사용사례: 임시 폼 데이터
+- **서버 세션**
+  - 저장위치: 서버 DB/Redis
+  - 지속성:✅ 기기 간 동기화
+  - 용량제한:✅ 무제한
+  - 보안성:✅ 높음 (서버)
+  - 기기간 동기화: ✅ 가능
+  - 사용사례: 인증 정보, 중요 데이터

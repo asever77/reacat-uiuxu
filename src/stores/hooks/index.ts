@@ -1,5 +1,5 @@
 import { useDispatch, useSelector, useStore } from "react-redux";
-import type { RootState, AppDispatch, AppStore } from "./index";
+import type { RootState, AppDispatch, AppStore } from "@/stores/";
 
 // 1. **가장 최신 권장 방식 (타입 안전한 버전):**
 // 'useStore', 'useDispatch', 'useSelector'에 한 번에 타입을 바인딩합니다.
