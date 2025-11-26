@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import AboutPage from "../../app/(page)/(sub)/about/page";
-import Header from "../../components/layout/Header";
+import AboutPage from "@/app/(page)/(sub)/about/page";
+import Header from "@/components/layout/Header";
 import StoreProvider from "@/providers/StoreProvider";
 import React from "react";
 
 const meta: Meta<typeof AboutPage> = {
-  title: "Pages/About",
+  title: "Pages/sub1/About",
   component: AboutPage,
   parameters: {
     nextjs: {

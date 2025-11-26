@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { http, HttpResponse } from "msw";
-import JoinModal from "../app/(page)/(sub)/about/@modal/join/page";
+import JoinModal from "@/app/(page)/(sub)/about/@modal/join/page";
 import React from "react";
 
 const meta: Meta<typeof JoinModal> = {

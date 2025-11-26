@@ -8,7 +8,7 @@ const PageLayout = ({
   return (
     <>
       <Header />
-      {children}
+      <div className="relative z-0">{children}</div>
     </>
   );
 };

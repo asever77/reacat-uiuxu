@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "소개페이지",
   description: "이 페이지에만 적용되는 설명",
   // 필요한 필드만 덮어쓰기
