@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/uiux";
 
@@ -5,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
-        {/* 404 아이콘/이미지 */}
+        {/* ㅇㅇㅇ 아이콘/이미지 */}
         <div className="mb-8">
           <div className="text-8xl font-bold text-gray-300 mb-4">404</div>
           <div className="w-32 h-32 mx-auto bg-gray-200 rounded-full flex items-center justify-center">

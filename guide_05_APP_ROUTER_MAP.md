@@ -109,12 +109,6 @@ SEO: 검색엔진이 완전한 콘텐츠를 봄
 │  └──📄mockServiceWorker.js
 📂src
 ├──📂app
-│  ├──📂(error)
-│  │  ├──📄error.tsx
-│  │  ├──📄global-error.tsx  # Root error
-│  │  ├──📄layout.tsx  # Root > error Layout
-│  │  └──📄not-found.tsx  # 404 페이지
-│  │
 │  ├──📂(page)
 │  │  ├──📄layout.tsx  # Root > page Layout
 │  │  ├──📂(main)
@@ -143,7 +137,10 @@ SEO: 검색엔진이 완전한 콘텐츠를 봄
 │  │
 │  ├──⭐favicon.tsx
 │  ├──🎨globals.css
-│  └──📄layout.tsx  # Root Layout
+│  ├──📄layout.tsx  # Root Layout
+│  ├──📄error.tsx
+│  ├──📄global-error.tsx  # Root error
+│  └──📄not-found.tsx  # 404 페이지
 │
 ├──📂components  # 공통 컴포넌트
 │  ├──📂contents
