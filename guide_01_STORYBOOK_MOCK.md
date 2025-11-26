@@ -139,6 +139,7 @@ const config: StorybookConfig = {
   addons: [
     "msw-storybook-addon",
     "@chromatic-com/storybook",
+    "@storybook/addon-viewport",
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-vitest",
@@ -162,7 +163,8 @@ export default config;
 
 ### storybook pages 생성
 
-"/app/about/page.tsx 페이지를 width layout, page only, mobile with layout 3가지 패턴으로 storybook 파일을 생성해줘"
+"페이지를 width layout, page only, mobile with layout 3가지 패턴으로 storybook 파일 하나로
+위치는 stories/page/ 에 생성해줘"
 
 - 1️⃣ With Layout
   - 실제 앱 경험
