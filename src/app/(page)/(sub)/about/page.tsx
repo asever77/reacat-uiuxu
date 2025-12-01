@@ -18,6 +18,73 @@ import {
   StepModalButton,
 } from "./_components/InteractiveButtons";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "소개페이지",
+  description: "이 페이지에만 적용되는 설명",
+  // 필요한 필드만 덮어쓰기
+  generator: "Next.js",
+  applicationName: "Next.js",
+  referrer: "origin-when-cross-origin",
+  keywords: ["Next.js", "React", "JavaScript"],
+  authors: [{ name: "Seb" }, { name: "Josh", url: "https://nextjs.org" }],
+  creator: "Jiachi Liu",
+  publisher: "Sebastian Markbåge",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+
+  openGraph: {
+    title: "Next.js",
+    description: "The React Framework for the Web",
+    url: "https://nextjs.org",
+    siteName: "Next.js",
+    images: [
+      {
+        url: "https://nextjs.org/og.png", // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://nextjs.org/og-alt.png", // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: "My custom alt",
+      },
+    ],
+    videos: [
+      {
+        url: "https://nextjs.org/video.mp4", // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+    ],
+    audio: [
+      {
+        url: "https://nextjs.org/audio.mp3", // Must be an absolute URL
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
 export default function AboutPage() {
   return (
     <FadeOutTransition

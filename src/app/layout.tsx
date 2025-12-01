@@ -16,7 +16,10 @@ const pretendard = localFont({
 
 // 메타데이터는 외부 파일(config/metadata.ts)에서 관리
 export const metadata: Metadata = {
-  title: "홈페이지 - 최고의 웹사이트",
+  title: {
+    template: "%s | Acme",
+    default: "Acme", // a default is required when creating a template
+  },
   description: "최고의 웹사이트입니다. Next.js로 제작되었습니다.",
   keywords: [
     "Next.js",
