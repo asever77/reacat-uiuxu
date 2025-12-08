@@ -20,6 +20,7 @@ pnpm create next-app@latest my-project-1
 pnpm config set auto-install-peers true
 pnpm config set strict-peer-dependencies true
 
+
 # 4. Storybook 설치 및 설정
 pnpm dlx storybook@latest init
 
