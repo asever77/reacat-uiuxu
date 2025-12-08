@@ -24,6 +24,19 @@ export const handlers = [
 ];
 ```
 
+## src/mocks/index.ts
+
+```ts
+import { userHandlers } from "./userHandlers";
+// import { orderHandlers } from './orderHandlers'; // 추후 추가될 핸들러
+
+// 모든 핸들러를 배열에 통합하여 export
+export const handlers = [
+  ...userHandlers,
+  // ...orderHandlers,
+];
+```
+
 ## src/mocks/{name}Handlers.ts
 
 ```tsx
@@ -97,7 +110,7 @@ MSW를 Storybook에 초기화하고 모든 스토리에 핸들러를 로드합�
 
 ```tsx
 import { initialize, mswLoader } from "msw-storybook-addon";
-import { handlers } from "../src/mocks/handlers.ts";
+import { handlers } from "../src/mocks";
 import type { Preview } from "@storybook/nextjs-vite";
 import "../src/app/globals.css";
 

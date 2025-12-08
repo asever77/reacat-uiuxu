@@ -23,6 +23,7 @@ pnpm config set strict-peer-dependencies true
 
 # 4. Storybook 설치 및 설정
 pnpm dlx storybook@latest init
+Do you want to install Playwright with Chromium - YES
 
 # 5. MSW(Mock Service Worker) 설치 및 설정
 pnpm add msw --save-dev

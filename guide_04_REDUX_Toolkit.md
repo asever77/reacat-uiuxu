@@ -57,7 +57,6 @@ Redux Toolkit의 데이터 흐름을 시각적으로 이해하면 훨씬 쉽습�
 
 ```ts
 // src/stores/slices/userSlice.ts
-
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // User 타입 정의
